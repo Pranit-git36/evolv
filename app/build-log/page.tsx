@@ -7,10 +7,10 @@ export default function BuildLog() {
         <p className="text-sm text-gray-500">Week 1</p>
 
         <ul className="mt-2 text-gray-400 list-disc ml-6">
-          <li>Setup Next.js + Tailwind</li>
-          <li>Created EVOLV structure</li>
-          <li>Learned routing and layouts</li>
-          <li>Faced npm issues and fixed them</li>
+          <li>Today I deployed EVOLV v1</li>
+          <li>Learnt Next.js routing</li>
+          <li>Fixed npm + Windows issues</li>
+          <li>Understood layouts and components</li>
         </ul>
       </div>
     </div>
