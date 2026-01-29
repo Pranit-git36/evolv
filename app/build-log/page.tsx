@@ -1,17 +1,33 @@
+const logs = [
+  {
+    week: "Week 1",
+    points: [
+      "Deployed EVOLV v1",
+      "Learned Next.js routing",
+      "Understood layout and children",
+      "Fixed npm + Windows issues",
+      "Started EVOLV v2 planning",
+    ],
+  },
+];
+
 export default function BuildLog() {
   return (
     <div>
       <h1 className="text-3xl font-bold">Build Log</h1>
 
-      <div className="mt-8 border border-gray-800 p-4 rounded">
-        <p className="text-sm text-gray-500">Week 1</p>
+      <div className="mt-8 grid gap-6">
+        {logs.map((log, index) => (
+          <div key={index} className="border border-gray-800 p-4 rounded">
+            <p className="text-sm text-gray-500">{log.week}</p>
 
-        <ul className="mt-2 text-gray-400 list-disc ml-6">
-          <li>Today I deployed EVOLV v1</li>
-          <li>Learnt Next.js routing</li>
-          <li>Fixed npm + Windows issues</li>
-          <li>Understood layouts and components</li>
-        </ul>
+            <ul className="mt-2 text-gray-400 list-disc ml-6">
+              {log.points.map((point, i) => (
+                <li key={i}>{point}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </div>
   );
