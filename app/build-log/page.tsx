@@ -9,6 +9,16 @@ const logs = [
       "Started EVOLV v2 planning",
     ],
   },
+  {
+    week: "Week 2",
+    points: [
+      "Built resuable MVP Card component",
+      "Added dynamic MVP Lab",
+      "Created Contact Page",
+      "Practiced advanced debugging",
+      "Shipped EVOLV v2"
+    ]
+  }
 ];
 
 export default function BuildLog() {

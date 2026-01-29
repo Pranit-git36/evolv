@@ -1,8 +1,7 @@
 export default function Home() {
   return (
     <div>
-      <h1 className="text-4xl font-bold">Hi, I’m Pranit.</h1>
-
+      <h1 className="text-4xl font-bold tracking-tight">Hi, I’m Pranit.</h1>
       <p className="mt-4 text-gray-400">
         I’m a CSE student building MVPs and documenting my learning journey.
       </p>
