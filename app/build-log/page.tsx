@@ -16,7 +16,8 @@ const logs = [
       "Added dynamic MVP Lab",
       "Created Contact Page",
       "Practiced advanced debugging",
-      "Shipped EVOLV v2"
+      "Shipped EVOLV v2",
+      "Faced production deployment mismatch due to Vercel pointing to wrong GitHub repo. Debugged and fixed by reconnecting correct repository. Learned importance of single source of truth."
     ]
   }
 ];

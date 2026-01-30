@@ -11,7 +11,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-black text-white antialiased">
-        <nav className="flex justify-between items-center px-8 py-4 border-b border-gray-800">
+        <nav className="flex flex-col sm:flex-row sm:justify-between items-center gap-4 px-8 py-4 border-b border-gray-800">
   <div className="flex items-center gap-2">
     <Image src="/logo.png" alt="EVOLV Logo" width={75} height={75} className="rounded-full"/>
     <span className="font-bold">EVOLV</span>
