@@ -17,7 +17,7 @@ export default function RootLayout({
     <span className="font-bold">EVOLV</span>
   </div>
 
-  <div className="flex gap-6">
+  <div className="flex flex-wrap justify-center gap-6">
     <Link href="/" className="hover:text-gray-400 transition">Home</Link>
     <Link href="/build-log" className="hover:text-gray-400 transition">Build Log</Link>
     <Link href="/mvp-lab" className="hover:text-gray-400 transition">MVP Lab</Link> 
