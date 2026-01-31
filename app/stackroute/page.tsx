@@ -2,7 +2,7 @@
 import {useState} from "react";
 export default function StackRouteMini(){
     const [idea,setIdea]=useState("")
-    const [stack,setStack]=useState(null)
+    const [stack, setStack] = useState<string[] | null>(null);
     return(<div>
     <h1 className="text-3xl font-bold ">StackRoute Mini</h1>
     <p className="text-gray-500 mt-2">Basic working version of StackRoute.</p>
