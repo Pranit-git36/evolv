@@ -21,6 +21,15 @@ const logs = [
       "StackRoute Mini v0 Shipped"
     ]
   }
+  {
+    week:"MVP Lab Architecture + StackRoute Mini Integration",
+    points:[
+      "Refactored Navigation Bar to Category Based Navigation",
+      "Integrated StackRoute into MVP Lab",
+      "Implemented Card Based Routing",
+      "Deployed Updated Platform Structure"
+    ]
+  }
 ];
 
 export default function BuildLog() {
