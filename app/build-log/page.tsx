@@ -22,12 +22,13 @@ const logs = [
     ]
   },
   {
-    week:"MVP Lab Architecture + StackRoute Mini Integration",
+    week:"Week 3",
     points:[
       "Refactored Navigation Bar to Category Based Navigation",
       "Integrated StackRoute into MVP Lab",
       "Implemented Card Based Routing",
-      "Deployed Updated Platform Structure"
+      "Deployed Updated Platform Structure",
+      "Fixed UI Buttons for StackRouteMini"
     ]
   }
 ];
