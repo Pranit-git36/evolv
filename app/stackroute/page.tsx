@@ -30,7 +30,14 @@ export default function StackRouteMini(){
   "Deployment: Netlify"
 ]
 )}},2000)}}>Generate Stack</button>
-    {stack && stack.map((item,index)=>(<p key={index}>{item}</p>))}
+    {stack && (
+  <div className="mt-6 flex flex-col gap-2">
+    {stack.map((item, index) => (
+      <p key={index}>{item}</p>
+    ))}
+  </div>
+)}
+
     <button className="mt-4 px-4 py-2 rounded border border-gray-800 hover:bg-gray-900 disabled:opacity-50" onClick={()=>{setIdea("");setStack(null)}}>Clear</button>
     </div></div>)
 }
