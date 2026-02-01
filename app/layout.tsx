@@ -23,7 +23,6 @@ export default function RootLayout({
     <Link href="/mvp-lab" className="hover:text-gray-400 transition">MVP Lab</Link> 
     <Link href="/about" className="hover:text-gray-400 transition">About</Link>
     <Link href="/contact" className="hover:text-gray-400 transition">Contact</Link>
-    <Link href="/stackroute" className="hover:text-gray-400 transition">StackRoute MVP</Link>
   </div>
 </nav>
         <main className="max-w-4xl mx-auto px-6 py-10">
