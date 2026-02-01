@@ -20,7 +20,7 @@ const logs = [
       "Faced production deployment mismatch due to Vercel pointing to wrong GitHub repo. Debugged and fixed by reconnecting correct repository. Learned importance of single source of truth.",
       "StackRoute Mini v0 Shipped"
     ]
-  }
+  },
   {
     week:"MVP Lab Architecture + StackRoute Mini Integration",
     points:[
