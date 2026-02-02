@@ -28,7 +28,8 @@ const logs = [
       "Integrated StackRoute into MVP Lab",
       "Implemented Card Based Routing",
       "Deployed Updated Platform Structure",
-      "Fixed UI Buttons for StackRouteMini"
+      "Fixed UI Buttons for StackRouteMini",
+      "StackRoute Mini v1 Shipped"
     ]
   }
 ];
