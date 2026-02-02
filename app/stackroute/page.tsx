@@ -6,6 +6,7 @@ export default function StackRouteMini() {
   const [stack, setStack] = useState<string[] | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [projectType,setprojectType]=useState("")
 
   return (
     <div>
@@ -14,7 +15,7 @@ export default function StackRouteMini() {
 
       <textarea
         placeholder="Describe your project here...."
-        className="mt-6 w-full bg-black border-gray-800 p-3 border rounded"
+        className="mt-6 w-full bg-black border-gray-800 p-3 border rounded hover:border-yellow-400"
         value={idea}
         onChange={(e) => setIdea(e.target.value)}
       />
@@ -23,9 +24,9 @@ export default function StackRouteMini() {
       {error && <p className="text-red-500 mt-2">{error}</p>}
 
       {/* Buttons */}
-      <div className="mt-4 flex gap-4">
+      <div className="mt-2 flex gap-4">
         <button
-          className="px-4 py-2 rounded border border-gray-800 hover:bg-gray-900 disabled:opacity-50"
+          className="px-4 py-2 rounded border border-gray-800 hover:bg-green-900 disabled:opacity-50"
           disabled={loading}
           onClick={() => {
             if (idea.trim() === "") {
@@ -36,8 +37,8 @@ export default function StackRouteMini() {
             setError("");
             setLoading(true);
 
-            setTimeout(() => {
-              if (idea.toLowerCase().includes("saas")) {
+            setTimeout(() => {const ideaLower=idea.toLowerCase();
+              if (ideaLower.includes("saas")||ideaLower.includes("dashboard")||ideaLower.includes("product")||ideaLower.includes("startup")){
                 setStack([
                   "Frontend: Next.js + Tailwind",
                   "Backend: Node.js",
@@ -45,16 +46,52 @@ export default function StackRouteMini() {
                   "Auth: Clerk",
                   "Deployment: Vercel",
                 ]);
+                setprojectType("SaaS Product");
+              } else if (ideaLower.includes("mobile")||ideaLower.includes("ios")||ideaLower.includes("android")){
+                setStack([
+                  "Frontend: React Native",
+                  "Framework: Expo",
+                  "Backend: Firebase",
+                  "Auth: Firebase Auth",
+                  "Deployment: Play Store/App Store",
+                ]);
+                setprojectType("Mobile Application")
+              } else if (ideaLower.includes(" ai ")||ideaLower.includes("ml")||ideaLower.includes("machine learning")||ideaLower.includes("chatbot")){
+                setStack([
+                "Language: Python",
+                "Backend: FastAPI",
+                "AI API: OpenAI",
+                "Vector DB: Pinecone",
+                "Deployment: Railway"
+                ]);
+                setprojectType("Artificial Intelligence/Machine Learning Project")
+              } else if (ideaLower.includes("portfolio")||ideaLower.includes("profile")||ideaLower.includes("resume")){
+                setStack([
+                  "Framework: Next.js",
+                  "Styling: Tailwind CSS",
+                  "Hosting: Vercel",
+                  "Forms: Formspree",
+                  "Analytics: Vercel Analytics"
+                ]);
+                setprojectType("Personal Portfolio Website")
+              } else if (ideaLower.includes("web")){
+                setStack([
+                  "Frontend: React",
+                  "Backend: Express",
+                  "Database: MongoDB",
+                  "Hosting: Render",
+                  "Deployment: Netlify"
+                ]);
+                setprojectType("General Web Application")
               } else {
                 setStack([
                   "Frontend: React",
                   "Backend: Express",
                   "Database: MongoDB",
                   "Hosting: Render",
-                  "Deployment: Netlify",
+                  "Deployment: Netlify"
                 ]);
               }
-
               setLoading(false);
             }, 2000);
           }}
@@ -64,7 +101,7 @@ export default function StackRouteMini() {
 
         {stack && (
           <button
-            className="px-4 py-2 rounded border border-gray-800 hover:bg-gray-900"
+            className="px-4 py-2 rounded border border-gray-800 hover:bg-red-900"
             onClick={() => {
               setIdea("");
               setStack(null);
@@ -77,10 +114,11 @@ export default function StackRouteMini() {
       </div>
 
       {/* Stack Output */}
+      {projectType && (<div className="mt-8 border-2 border-gray-500 rounded p-2 hover:border-blue-500 transition"><p>Detected: {projectType}</p></div>)}
       {stack && (
-        <div className="mt-6 flex flex-col gap-2">
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
           {stack.map((item, index) => (
-            <p key={index}>{item}</p>
+            <div className="mt-1 border-2 border-gray-500 rounded p-2 hover:border-green-500 transition"><p>{item}</p></div>
           ))}
         </div>
       )}
