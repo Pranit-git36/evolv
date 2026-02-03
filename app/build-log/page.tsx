@@ -31,7 +31,7 @@ const logs = [
       "Fixed UI Buttons for StackRouteMini",
       "StackRoute Mini v1 Shipped"
     ]
-  }
+  },
   {
     week:"Week 4",
     points:[
@@ -39,7 +39,7 @@ const logs = [
       "Implemented project type detection",
       "Introduced responsive techcards",
       "Added loading + validation UX",
-      "Refine EVOLV Homepage (Hero Section + What I'm Building"
+      "Refine EVOLV Homepage (Hero Section + What I am Building)"
     ]
   }
 ];
