@@ -10,7 +10,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-black text-white antialiased">
+      <body className="bg-black text-white antialiased"><div>
         <nav className="flex flex-col sm:flex-row sm:justify-between items-center gap-4 px-8 py-4 border-b border-gray-800">
   <div className="flex items-center gap-2">
     <Image src="/logo.png" alt="EVOLV Logo" width={75} height={75} className="rounded-full"/>
@@ -27,7 +27,10 @@ export default function RootLayout({
 </nav>
         <main className="max-w-4xl mx-auto px-6 py-10">
           {children}
-        </main>
+          <footer className="mt-20 border-t border-gray-800 pt-6 text-gray-500 text-sm text-center opacity-80">
+            EVOLV — building in public.
+          </footer>
+        </main></div>
       </body>
     </html>
   );

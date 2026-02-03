@@ -41,6 +41,34 @@ export default function Home() {
     </div>
   </div>
 </section>
+<section className="mt-16">
+  <h2 className="text-2xl font-semibold">Tech Stack</h2>
+
+  <p className="text-gray-500 mt-2">
+    Tools and technologies I’m actively building with.
+  </p>
+
+  <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 gap-4">
+    {[
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Node.js",
+      "Python",
+      "MongoDB / Supabase",
+      "Vercel",
+    ].map((tech, index) => (
+      <div
+        key={index}
+        className="border border-gray-800 rounded p-3 text-center hover:bg-gray-900 transition"
+      >
+        {tech}
+      </div>
+    ))}
+  </div>
+</section>
+
     </div>
   );
 }

@@ -7,6 +7,7 @@ export default function StackRouteMini() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [projectType,setprojectType]=useState("")
+  const examples = ["AI Chatbot", "Mobile App", "Portfolio Website", "SaaS Dashboard"];
 
   return (
     <div>
@@ -22,9 +23,25 @@ export default function StackRouteMini() {
 
       {/* Error message (right under textarea) */}
       {error && <p className="text-red-500 mt-2">{error}</p>}
-      <p className="text-gray-600 mt-2 text-sm">
-        Try: "ai chatbot", "mobile app", "portfolio website", "saas dashboard"
-      </p>
+      <p className="text-gray-500 text-sm mt-2">
+  Examples (you can type anything):
+</p>
+
+      <div className="mt-1 flex flex-wrap gap-2 py-5">
+  {examples.map((ex, i) => (
+    <button
+      key={i}
+      onClick={() => {
+        setIdea(ex);
+        setError("");
+      }}
+      className="text-sm px-3 py-1 border border-gray-800 rounded hover:bg-blue-900 transition"
+    >
+      {ex}
+    </button>
+  ))}
+</div>
+
       {/* Buttons */}
       <div className="mt-2 flex gap-4">
         <button
