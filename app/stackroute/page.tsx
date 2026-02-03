@@ -22,7 +22,9 @@ export default function StackRouteMini() {
 
       {/* Error message (right under textarea) */}
       {error && <p className="text-red-500 mt-2">{error}</p>}
-
+      <p className="text-gray-600 mt-2 text-sm">
+        Try: "ai chatbot", "mobile app", "portfolio website", "saas dashboard"
+      </p>
       {/* Buttons */}
       <div className="mt-2 flex gap-4">
         <button
@@ -118,9 +120,14 @@ export default function StackRouteMini() {
       {stack && (
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
           {stack.map((item, index) => (
-            <div className="mt-1 border-2 border-gray-500 rounded p-2 hover:border-green-500 transition"><p>{item}</p></div>
+            <div key={index} className="mt-1 border-2 border-gray-500 rounded p-2 hover:border-green-500 transition"><p>{item}</p></div>
           ))}
         </div>
+      )}
+      {!stack && !loading && (
+        <p className="mt-6 text-gray-500">
+          Describe your project above to generate a tech stack.
+        </p>
       )}
     </div>
   );

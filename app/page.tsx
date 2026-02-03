@@ -1,24 +1,46 @@
 export default function Home() {
   return (
     <div>
-      <h1 className="text-4xl font-bold tracking-tight">Hi, I’m Pranit.</h1>
-      <p className="mt-4 text-gray-400">
-        I’m a CSE student building MVPs and documenting my learning journey.
+      <section className="mt-10">
+  <h1 className="text-4xl font-bold">
+    Building in public. Shipping real MVPs.
+  </h1>
+
+  <p className="mt-4 text-gray-500 max-w-xl">
+    EVOLV is my personal builder lab where I turn ideas into working products and document the journey.
+  </p>
+
+  <div className="mt-6 flex gap-4">
+    <a href="/mvp-lab" className="px-4 py-2 border border-gray-800 rounded hover:bg-gray-900">
+      Explore MVP Lab
+    </a>
+
+    <a href="/stackroute" className="px-4 py-2 border border-gray-800 rounded hover:bg-gray-900">
+      Try StackRoute
+    </a>
+  </div>
+</section>
+<section className="mt-16">
+  <h2 className="text-2xl font-semibold">What I’m Building</h2>
+
+  <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <div className="border border-gray-800 rounded p-4">
+      <h3 className="font-medium">StackRoute Mini</h3>
+      <p className="text-gray-500 mt-1">
+        Smart tech stack recommendations based on project type.
       </p>
+      <span className="inline-block mt-2 text-green-500 text-sm">Live</span>
+    </div>
 
-      <p className="mt-2 text-gray-400">
-        EVOLV is my public lab where I experiment, fail, learn, and grow.
+    <div className="border border-gray-800 rounded p-4 opacity-60">
+      <h3 className="font-medium">Next MVP</h3>
+      <p className="text-gray-500 mt-1">
+        Exploring the next problem to solve.
       </p>
-
-      <div className="mt-8 flex gap-4">
-        <a href="/build-log" className="border px-4 py-2 rounded">
-          View Build Log
-        </a>
-
-        <a href="/mvp-lab" className="border px-4 py-2 rounded">
-          Explore MVP Lab
-        </a>
-      </div>
+      <span className="inline-block mt-2 text-yellow-500 text-sm">Coming soon</span>
+    </div>
+  </div>
+</section>
     </div>
   );
 }

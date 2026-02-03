@@ -32,6 +32,16 @@ const logs = [
       "StackRoute Mini v1 Shipped"
     ]
   }
+  {
+    week:"Week 4",
+    points:[
+      "Added smart keyword-based engine",
+      "Implemented project type detection",
+      "Introduced responsive techcards",
+      "Added loading + validation UX",
+      "Refine EVOLV Homepage (Hero Section + What I'm Building"
+    ]
+  }
 ];
 
 export default function BuildLog() {
