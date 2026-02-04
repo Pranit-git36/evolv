@@ -102,7 +102,7 @@ export default function StackRouteMini() {
                   "Deployment: Netlify"
                 ]);
                 setprojectType("General Web Application")
-              }else if (ideaLower.includes("ecommerce")||ideaLower.includes("store")||ideaLower.includes("shop")||ideaLower.includes("e-commerce")){
+              }else if (ideaLower.includes("ecommerce")||ideaLower.includes("store")||ideaLower.includes("shop")||ideaLower.includes("e-commerce")||ideaLower.includes("product")){
                 setStack([
                   "Frontend: Next.js",
                   "Backend: Node.js",
