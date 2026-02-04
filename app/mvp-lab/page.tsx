@@ -24,7 +24,7 @@ export default function MVPLab() {
     <div>
       <h1 className="text-3xl font-bold">MVP Lab</h1>
 
-      <div className="mt-8 grid gap-6">
+      <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
         {mvps.map((mvp, index) => (mvp.title==='StackRoute'?(
           <Link key={index} href="/stackroute">
             <MVPCard key={index} title={mvp.title} description={mvp.description} status={mvp.status}/>

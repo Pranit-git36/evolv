@@ -57,7 +57,7 @@ export default function StackRouteMini() {
             setLoading(true);
 
             setTimeout(() => {const ideaLower=idea.toLowerCase();
-              if (ideaLower.includes("saas")||ideaLower.includes("dashboard")||ideaLower.includes("product")||ideaLower.includes("startup")){
+              if (ideaLower.includes("saas")||ideaLower.includes("software as a service")||ideaLower.includes("service")){
                 setStack([
                   "Frontend: Next.js + Tailwind",
                   "Backend: Node.js",
@@ -66,7 +66,7 @@ export default function StackRouteMini() {
                   "Deployment: Vercel",
                 ]);
                 setprojectType("SaaS Product");
-              } else if (ideaLower.includes("mobile")||ideaLower.includes("ios")||ideaLower.includes("android")){
+              } else if (ideaLower.includes("mobile")||ideaLower.includes("ios")||ideaLower.includes("android")||ideaLower.includes("mobile app")){
                 setStack([
                   "Frontend: React Native",
                   "Framework: Expo",
@@ -75,7 +75,7 @@ export default function StackRouteMini() {
                   "Deployment: Play Store/App Store",
                 ]);
                 setprojectType("Mobile Application")
-              } else if (ideaLower.includes(" ai ")||ideaLower.includes("ml")||ideaLower.includes("machine learning")||ideaLower.includes("chatbot")){
+              } else if (ideaLower.includes(" ai ")||ideaLower.includes("ml")||ideaLower.includes("machine learning")||ideaLower.includes("chatbot")||ideaLower.includes("artificial intelligence")){
                 setStack([
                 "Language: Python",
                 "Backend: FastAPI",
@@ -93,7 +93,7 @@ export default function StackRouteMini() {
                   "Analytics: Vercel Analytics"
                 ]);
                 setprojectType("Personal Portfolio Website")
-              } else if (ideaLower.includes("web")){
+              }  else if (ideaLower.includes("web app")||ideaLower.includes("website")||ideaLower.includes("platform")){
                 setStack([
                   "Frontend: React",
                   "Backend: Express",
@@ -102,14 +102,54 @@ export default function StackRouteMini() {
                   "Deployment: Netlify"
                 ]);
                 setprojectType("General Web Application")
-              } else {
+              }else if (ideaLower.includes("ecommerce")||ideaLower.includes("store")||ideaLower.includes("shop")||ideaLower.includes("e-commerce")){
                 setStack([
-                  "Frontend: React",
-                  "Backend: Express",
+                  "Frontend: Next.js",
+                  "Backend: Node.js",
                   "Database: MongoDB",
-                  "Hosting: Render",
-                  "Deployment: Netlify"
+                  "Payments: Stripe",
+                  "Deployment: Vercel"
                 ]);
+                setprojectType("E-Commerce Site")
+              }else if (ideaLower.includes("api")||ideaLower.includes("backend")){
+                setStack([
+                  "Runtime: Node.js",
+                  "Framework: Express",
+                  "Database: PostgreSQL",
+                  "Auth: JWT",
+                  "Deployment: Railway"
+                ]);
+                setprojectType("API/Backend Software")
+              }else if (ideaLower.includes("extension")||ideaLower.includes("chrome")||ideaLower.includes("chrome extension")){
+                setStack([
+                  "Frontend: Vanilla JS / React",
+                  "Styling: CSS",
+                  "Storage: Chrome Storage",
+                  "Build Tool: Vite",
+                  "Distribution: Chrome Web Store"
+                ]);
+                setprojectType("Chrome Extension/Tool")
+              }else if (ideaLower.includes("data analytics")||ideaLower.includes("statistics")||ideaLower.includes("dashboard")||ideaLower.includes("data")){
+                setStack([
+                  "Backend: Python",
+                  "Framework: Streamlit",
+                  "Database: PostgreSQL",
+                  "Charts: Plotly",
+                  "Deployment: Streamlit Cloud"
+                ]);
+                setprojectType("Data/Analytics App")
+              }else if (ideaLower.includes("mvp")||ideaLower.includes("startup")||ideaLower.includes("prototype")){
+                setStack([
+                  "Frontend: Next.js",
+                  "Backend: Node.js",
+                  "Database: Supabase",
+                  "Auth: Clerk",
+                  "Deployment: Vercel"
+                ]);
+                setprojectType("MVP/Startup Prototype")
+              }else {
+                setError("Could not detect project type. Try keywords like: saas , mobile app, ai, e-commerce, portfolio");
+                setStack(null);
               }
               setLoading(false);
             }, 2000);

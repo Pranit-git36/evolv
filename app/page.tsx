@@ -23,7 +23,7 @@ export default function Home() {
 <section className="mt-16">
   <h2 className="text-2xl font-semibold">What I’m Building</h2>
 
-  <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+  <div className="mt-10 border border-gray-800 rounded-xl p-4 transition hover:border-gray-600">
     <div className="border border-gray-800 rounded p-4">
       <h3 className="font-medium">StackRoute Mini</h3>
       <p className="text-gray-500 mt-1">
@@ -32,7 +32,7 @@ export default function Home() {
       <span className="inline-block mt-2 text-green-500 text-sm">Live</span>
     </div>
 
-    <div className="border border-gray-800 rounded p-4 opacity-60">
+    <div className="mt-5 border border-gray-800 rounded-xl p-4 transition hover:border-gray-600">
       <h3 className="font-medium">Next MVP</h3>
       <p className="text-gray-500 mt-1">
         Exploring the next problem to solve.
@@ -43,12 +43,10 @@ export default function Home() {
 </section>
 <section className="mt-16">
   <h2 className="text-2xl font-semibold">Tech Stack</h2>
-
   <p className="text-gray-500 mt-2">
     Tools and technologies I’m actively building with.
   </p>
-
-  <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 gap-4">
+  <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 gap-4">
     {[
       "Next.js",
       "React",
@@ -68,7 +66,6 @@ export default function Home() {
     ))}
   </div>
 </section>
-
     </div>
   );
 }

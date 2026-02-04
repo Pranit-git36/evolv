@@ -51,7 +51,7 @@ export default function BuildLog() {
 
       <div className="mt-8 grid gap-6">
         {logs.map((log, index) => (
-          <div key={index} className="border border-gray-800 p-4 rounded">
+          <div key={index} className="border border-gray-800 p-4 rounded hover:border-green-400 transition">
             <p className="text-sm text-gray-500">{log.week}</p>
 
             <ul className="mt-2 text-gray-400 list-disc ml-6">
