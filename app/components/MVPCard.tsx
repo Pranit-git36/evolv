@@ -21,7 +21,7 @@ export default function MVPCard({ title, description, status }: MVPCardProps) {
 >
   {status}
 </span>
-      <p className="text-sm text-gray-500 mt-1">Status: {status}</p>
+      {/* <p className="text-sm text-gray-500 mt-1">Status: {status}</p> */}
     </div>
   );
 }
