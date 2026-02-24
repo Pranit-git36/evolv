@@ -39,6 +39,7 @@ KNOWN_FAMILIES = [
     "ModuleNotFoundError",
     "AttributeError",
     "SyntaxError",
+    "ValueError",
 ]
 
 
@@ -165,6 +166,7 @@ def _classify_error_family(core_line: str) -> str:
         "KeyError",
         "AttributeError",
         "SyntaxError",
+        "ValueError",
     ]
 
     for fam in ordered_families:
@@ -235,6 +237,13 @@ def _build_family_explanation(family: str) -> dict:
             "what_failed": "The Python parser encountered code that breaks the language rules.",
             "why_it_happens": "This typically comes from missing colons, unmatched quotes or parentheses, incorrect indentation, or pasting non‑Python text into a file.",
             "where_to_look_first": "Look at the line (and sometimes the line above) marked in the error, paying close attention to punctuation and indentation.",
+        }
+    if family == "ValueError":
+        return {
+            "family_summary": "A `ValueError` means a function received a value of the right type but an invalid or unexpected content.",
+            "what_failed": "Python accepted the type of the value, but the specific value itself was not allowed for that operation.",
+            "why_it_happens": "This often happens when converting strings to numbers or dates, unpacking the wrong number of values, or passing values outside an allowed range.",
+            "where_to_look_first": "Look at the value mentioned in the error message and check how it is produced just before the failing line.",
         }
 
     # Fallback, should not normally be used for known families
@@ -403,6 +412,38 @@ def _syntax_error_refinements() -> List[_Refinement]:
     ]
 
 
+def _value_error_refinements() -> List[_Refinement]:
+    return [
+        (
+            "invalid literal for int() with base",
+            {
+                "what_failed": "Python tried to convert a string to an integer but the characters were not a valid integer.",
+                "why_it_happens": "The string contains non‑digit characters or formatting that `int()` cannot parse.",
+                "where_to_look_first": "Print the string you are passing into `int()` and check that it only contains digits (and an optional sign).",
+                "refinement_note": "If the value comes from user input or a file, validate or clean it before converting.",
+            },
+        ),
+        (
+            "could not convert string to float",
+            {
+                "what_failed": "Python tried to convert a string to a floating‑point number but the format was not valid.",
+                "why_it_happens": "The string may contain letters, commas instead of dots, or other characters that `float()` cannot interpret.",
+                "where_to_look_first": "Inspect the exact string passed into `float()` and ensure it uses a dot for the decimal separator and contains only numeric characters plus at most one dot and sign.",
+                "refinement_note": "Be careful when parsing numbers formatted for different locales (for example, using commas as decimal separators).",
+            },
+        ),
+        (
+            "too many values to unpack",
+            {
+                "what_failed": "Python tried to unpack more values than there were target variables.",
+                "why_it_happens": "The iterable on the right‑hand side produced more items than the variables on the left can hold.",
+                "where_to_look_first": "Print the iterable that you are unpacking and check how many elements it actually has versus how many variables you wrote on the left.",
+                "refinement_note": "You can sometimes use the star syntax (e.g. `a, *rest = seq`) if you intentionally want to capture extra values.",
+            },
+        ),
+    ]
+
+
 _REFINEMENT_BUILDERS = {
     "TypeError": _type_error_refinements,
     "AttributeError": _attribute_error_refinements,
@@ -412,6 +453,7 @@ _REFINEMENT_BUILDERS = {
     "ImportError": _import_error_refinements,
     "ModuleNotFoundError": _module_not_found_refinements,
     "SyntaxError": _syntax_error_refinements,
+    "ValueError": _value_error_refinements,
 }
 
 
@@ -467,4 +509,3 @@ if __name__ == "__main__":
         print()
         print("General note:")
         print(f"  {explanation.notes}")
-
