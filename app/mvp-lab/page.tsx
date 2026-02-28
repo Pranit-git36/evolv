@@ -4,7 +4,7 @@ const mvps = [
   {
     title: "StackRoute",
     description: "AI-powered SaaS stack generator for developers.",
-    status: "Paused",
+    status: "Active",
   },
   {
     title: "EVOLV",
@@ -12,8 +12,14 @@ const mvps = [
     status: "Active",
   },
   {
-    title: "The AI Shop",
-    description: "One site, multiple AI models for specific tasks.",
+    title: "ErrorBuddy",
+    description: "Error explanation and solution providing platform for developers",
+    status: "Upcoming"
+
+  },
+  {
+    title: "Skillio",
+    description: "Resume data extraction , simplified for HRs.",
     status: "Not Started"
 
   }

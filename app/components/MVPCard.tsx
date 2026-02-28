@@ -14,8 +14,10 @@ export default function MVPCard({ title, description, status }: MVPCardProps) {
   className={`inline-block mt-3 text-xs px-2 py-1 rounded border ${
     status === "Active"
       ? "text-green-500 border-green-500"
-      : status === "Paused"
+      : status === "Not Started"
       ? "text-yellow-500 border-yellow-500"
+      : status === "Upcoming"
+      ? "text-blue-500 border-blue-500"
       : "text-gray-400 border-gray-700"
   }`}
 >

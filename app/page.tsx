@@ -25,7 +25,7 @@ export default function Home() {
 
   <div className="mt-10 border border-gray-800 rounded-xl p-4 transition hover:border-gray-600">
     <div className="border border-gray-800 rounded p-4">
-      <h3 className="font-medium">StackRoute Mini</h3>
+      <h3 className="font-medium">StackRoute</h3>
       <p className="text-gray-500 mt-1">
         Smart tech stack recommendations based on project type.
       </p>
@@ -33,11 +33,11 @@ export default function Home() {
     </div>
 
     <div className="mt-5 border border-gray-800 rounded-xl p-4 transition hover:border-gray-600">
-      <h3 className="font-medium">Next MVP</h3>
+      <h3 className="font-medium">ErrorBuddy</h3>
       <p className="text-gray-500 mt-1">
-        Exploring the next problem to solve.
+        Simplified error explanation platform for developers.
       </p>
-      <span className="inline-block mt-2 text-yellow-500 text-sm">Coming soon</span>
+      <span className="inline-block mt-2 text-blue-500 text-sm">Coming soon</span>
     </div>
   </div>
 </section>
