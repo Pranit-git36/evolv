@@ -14,8 +14,15 @@ type ErrorResult = {
   notes?: string;
 };
 
+// Set NEXT_PUBLIC_ERRORBUDDY_API_URL for local Flask backend (e.g. http://127.0.0.1:8000).
+// Leave unset on Vercel to use the built-in /api/translate serverless function.
 const API_BASE_URL =
-  process.env.NEXT_PUBLIC_ERRORBUDDY_API_URL ?? "http://127.0.0.1:8000";
+  process.env.NEXT_PUBLIC_ERRORBUDDY_API_URL ?? "";
+
+// When no external backend URL is set (e.g. on Vercel), use same-origin /api/translate
+const TRANSLATE_URL = API_BASE_URL
+  ? `${API_BASE_URL.replace(/\/$/, "")}/translate`
+  : "/api/translate";
 
   export default function ErrorBuddyComponent() {
     const [rawError, setRawError] = useState("");
@@ -29,7 +36,7 @@ const API_BASE_URL =
       setResult(null);
   
       try {
-        const res = await fetch(`${API_BASE_URL}/translate`, {
+        const res = await fetch(TRANSLATE_URL, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ error_text: rawError }),
