@@ -66,25 +66,25 @@ const TRANSLATE_URL = API_BASE_URL
       }
     }
 
-  return (
-    <div
-      style={{
-        minHeight: "100vh",
-        margin: 0,
-        padding: "2.5rem 1.5rem",
-        backgroundColor: "#0f172a", // slate-900
-        color: "#e5e7eb", // gray-200
-        fontFamily:
-          "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-      }}
-    >
+    return (
       <div
+        style={{
+          minHeight: "100vh",
+          margin: 0,
+          padding: "1.75rem 1.25rem",
+          backgroundColor: "#0f172a", // slate-900
+          color: "#e5e7eb", // gray-200
+          fontFamily:
+            "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        }}
+      >
+            <div
         style={{
           maxWidth: 900,
           margin: "0 auto",
           backgroundColor: "#020617", // slate-950
           borderRadius: 16,
-          padding: "2rem",
+          padding: "1.5rem 1.25rem",
           boxShadow: "0 24px 60px rgba(15,23,42,0.9)",
           border: "1px solid rgba(148,163,184,0.3)",
         }}
@@ -145,47 +145,22 @@ const TRANSLATE_URL = API_BASE_URL
               }}
             />
 
-            <div
+<div
               style={{
                 display: "flex",
-                alignItems: "center",
+                alignItems: "flex-start",
                 justifyContent: "space-between",
                 marginTop: "0.75rem",
                 gap: "0.75rem",
+                flexWrap: "wrap",
               }}
             >
-              <button
-                onClick={handleTranslate}
-                disabled={loading || !rawError.trim()}
-                style={{
-                  padding: "0.6rem 1.4rem",
-                  borderRadius: 999,
-                  border: "none",
-                  fontSize: "0.95rem",
-                  fontWeight: 500,
-                  cursor:
-                    loading || !rawError.trim() ? "not-allowed" : "pointer",
-                  background:
-                    loading || !rawError.trim()
-                      ? "#1f2937"
-                      : "linear-gradient(135deg, #0ea5e9, #6366f1)",
-                  color: "#f9fafb",
-                  boxShadow:
-                    loading || !rawError.trim()
-                      ? "none"
-                      : "0 12px 25px rgba(56,189,248,0.35)",
-                  transition:
-                    "transform 0.08s ease-out, box-shadow 0.08s ease-out, filter 0.08s ease-out",
-                }}
-              >
-                {loading ? "Translating…" : "Explain this error"}
-              </button>
-
+              ...
               <span
                 style={{
-                  fontSize: "0.75rem",
+                  fontSize: "0.8rem",
                   color: "#6b7280",
-                  whiteSpace: "nowrap",
+                  whiteSpace: "normal",
                 }}
               >
                 Your traceback never leaves your machine.
@@ -208,7 +183,7 @@ const TRANSLATE_URL = API_BASE_URL
           {result && (
             <section
               style={{
-                padding: "1.4rem 1.5rem",
+                padding: "1.25rem 1.1rem",
                 borderRadius: 14,
                 background:
                   "radial-gradient(circle at top left, rgba(56,189,248,0.16), transparent 55%), rgba(15,23,42,0.98)",
@@ -223,7 +198,8 @@ const TRANSLATE_URL = API_BASE_URL
                   display: "flex",
                   justifyContent: "space-between",
                   alignItems: "baseline",
-                  gap: "1rem",
+                  gap: "0.75rem",
+                  flexWrap: "wrap",
                 }}
               >
                 <div>
