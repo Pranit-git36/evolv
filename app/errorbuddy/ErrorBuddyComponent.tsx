@@ -78,7 +78,7 @@ const TRANSLATE_URL = API_BASE_URL
             "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
         }}
       >
-            <div
+      <div
         style={{
           maxWidth: 900,
           margin: "0 auto",
@@ -145,7 +145,7 @@ const TRANSLATE_URL = API_BASE_URL
               }}
             />
 
-<div
+            <div
               style={{
                 display: "flex",
                 alignItems: "flex-start",
@@ -155,7 +155,33 @@ const TRANSLATE_URL = API_BASE_URL
                 flexWrap: "wrap",
               }}
             >
-              ...
+              <button
+                onClick={handleTranslate}
+                disabled={loading || !rawError.trim()}
+                style={{
+                  padding: "0.6rem 1.4rem",
+                  borderRadius: 999,
+                  border: "none",
+                  fontSize: "0.95rem",
+                  fontWeight: 500,
+                  cursor:
+                    loading || !rawError.trim() ? "not-allowed" : "pointer",
+                  background:
+                    loading || !rawError.trim()
+                      ? "#1f2937"
+                      : "linear-gradient(135deg, #0ea5e9, #6366f1)",
+                  color: "#f9fafb",
+                  boxShadow:
+                    loading || !rawError.trim()
+                      ? "none"
+                      : "0 12px 25px rgba(56,189,248,0.35)",
+                  transition:
+                    "transform 0.08s ease-out, box-shadow 0.08s ease-out, filter 0.08s ease-out",
+                }}
+              >
+                {loading ? "Translating…" : "Explain this error"}
+              </button>
+
               <span
                 style={{
                   fontSize: "0.8rem",
