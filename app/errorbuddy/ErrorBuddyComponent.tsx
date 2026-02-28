@@ -163,7 +163,7 @@ const TRANSLATE_URL = API_BASE_URL
                   whiteSpace: "normal",
                 }}
               >
-                Rectify and EVOLV.
+                Your traceback never leaves your machine.
               </span>
             </div>
 
