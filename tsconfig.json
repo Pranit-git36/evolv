@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-, "app/errorbuddy/page.jsx", "app/errorbuddy/ErrorBuddy.jsx", "app/errorbuddy/ErrorBuddy.jsx"  ],
+  ],
   "exclude": ["node_modules"]
 }

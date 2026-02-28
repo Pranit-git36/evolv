@@ -14,40 +14,50 @@ type ErrorResult = {
   notes?: string;
 };
 
-export default function ErrorBuddyComponent() {
-  const [rawError, setRawError] = useState("");
-  const [result, setResult] = useState<ErrorResult | null>(null);
-  const [loading, setLoading] = useState(false);
-  const [errorMsg, setErrorMsg] = useState("");
+const API_BASE_URL =
+  process.env.NEXT_PUBLIC_ERRORBUDDY_API_URL ?? "http://127.0.0.1:8000";
 
-  async function handleTranslate() {
-    setLoading(true);
-    setErrorMsg("");
-    setResult(null);
-
-    try {
-      const res = await fetch("http://127.0.0.1:8000/translate", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ error_text: rawError }),
-      });
-
-      if (!res.ok) {
-        throw new Error(`Server error: ${res.status}`);
+  export default function ErrorBuddyComponent() {
+    const [rawError, setRawError] = useState("");
+    const [result, setResult] = useState<ErrorResult | null>(null);
+    const [loading, setLoading] = useState(false);
+    const [errorMsg, setErrorMsg] = useState("");
+  
+    async function handleTranslate() {
+      setLoading(true);
+      setErrorMsg("");
+      setResult(null);
+  
+      try {
+        const res = await fetch(`${API_BASE_URL}/translate`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ error_text: rawError }),
+        });
+  
+        if (!res.ok) {
+          throw new Error(`Server error: ${res.status}`);
+        }
+  
+        const data: ErrorResult = await res.json();
+        setResult(data);
+      } catch (err) {
+        if (err instanceof Error) {
+          // Network-level failures are the most common here (backend not running, wrong URL, etc.)
+          if (err.message === "Failed to fetch") {
+            setErrorMsg(
+              "Could not reach ErrorBuddy. Is the backend running and the API URL correct?"
+            );
+          } else {
+            setErrorMsg(err.message);
+          }
+        } else {
+          setErrorMsg("Request failed");
+        }
+      } finally {
+        setLoading(false);
       }
-
-      const data: ErrorResult = await res.json();
-      setResult(data);
-    } catch (err) {
-      if (err instanceof Error) {
-        setErrorMsg(err.message);
-      } else {
-        setErrorMsg("Request failed");
-      }
-    } finally {
-      setLoading(false);
     }
-  }
 
   return (
     <div
